@@ -84,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
         countdownText.setText(timeLeftText);
     }
 
+    public void resetTimer(View v) {
+        countDownTimer.cancel();
+        timeLeftMiliseconds = 1200000;
+        countdownText.setText("20:00");
+        timerRunning = false;
+        countdownButton.setText("Start Timer");
+    }
+
     public void play(View v) {
         if (player == null) {
             player = MediaPlayer.create(this, R.raw.relaxation);
